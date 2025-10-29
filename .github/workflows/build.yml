@@ -24,7 +24,6 @@ jobs:
         shell: cmd
         run: | 
           curl https://github.com/activescott/lessmsi/releases/download/v2.10.3/lessmsi-v2.10.3.zip -L --output lessmsi.zip && 7z.exe x lessmsi.zip -o"lessmsi"
-          # curl https://github.com/activescott/lessmsi/releases/download/v1.10.0/lessmsi-v1.10.0.zip -L --output lessmsi.zip && 7z.exe x lessmsi.zip -o"lessmsi"
           
       - name: uncompress
         shell: cmd
