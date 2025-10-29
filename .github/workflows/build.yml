@@ -18,12 +18,13 @@ jobs:
       - name: installer
         shell: cmd
         run: |
-          curl https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.31-winx64.msi -L -J --output installer.msi
+          curl https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.44-winx64.msi -L -J --output installer.msi
           
       - name: lessmsi 
         shell: cmd
         run: | 
-          curl https://github.com/activescott/lessmsi/releases/download/v1.10.0/lessmsi-v1.10.0.zip -L --output lessmsi.zip && 7z.exe x lessmsi.zip -o"lessmsi"
+          curl https://github.com/activescott/lessmsi/releases/download/v2.10.3/lessmsi-v2.10.3.zip -L --output lessmsi.zip && 7z.exe x lessmsi.zip -o"lessmsi"
+          # curl https://github.com/activescott/lessmsi/releases/download/v1.10.0/lessmsi-v1.10.0.zip -L --output lessmsi.zip && 7z.exe x lessmsi.zip -o"lessmsi"
           
       - name: uncompress
         shell: cmd
