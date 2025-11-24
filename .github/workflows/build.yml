@@ -33,7 +33,7 @@ jobs:
       - name: show unpacked MySQL files
         shell: cmd
         run: |
-          dir /s installation
+          dir /s /b /o:n /a:d installation
           
       - name: rename Program Files
         shell: cmd
