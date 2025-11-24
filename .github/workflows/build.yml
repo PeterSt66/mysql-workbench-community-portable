@@ -29,11 +29,15 @@ jobs:
         shell: cmd
         run: |
           .\lessmsi\lessmsi.exe x "installer.msi" "installation\"
+
+      - name: show unpacked MySQL files
+        shell: cmd
+        run: |
+          dir /s installation
           
       - name: rename Program Files
         shell: cmd
         run: |
-          dir /s installation &&^
           cd "installation\SourceDir\MySQL\PFiles64" &&^
           rename "MySQL Workbench 8.0 CE" "MySQL_Workbench_8_0_CE"
 
