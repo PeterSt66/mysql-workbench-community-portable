@@ -38,17 +38,17 @@ jobs:
       - name: rename Program Files
         shell: cmd
         run: |
-          cd "installation\SourceDir\MySQL\PFiles64" &&^
+          cd "installation\SourceDir\PFiles64\MySQL" &&^
           rename "MySQL Workbench 8.0 CE" "MySQL_Workbench_8_0_CE"
 
       - shell: cmd
-        run: xcopy /H /Y /C "MySQLWorkbench.exe.Portable.cmd" "installation\SourceDir\MySQL\PFiles64\MySQL_Workbench_8_0_CE"
+        run: xcopy /H /Y /C "MySQLWorkbench.exe.Portable.cmd" "installation\SourceDir\PFiles64\MySQL\MySQL_Workbench_8_0_CE"
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "installation/SourceDir/MySQL/PFiles64/MySQL_Workbench_8_0_CE"
+          directory: "installation/SourceDir/PFiles64/MySQL/MySQL_Workbench_8_0_CE"
           filename: "${{ env.targetZip }}"
           
       # - name: Release prebuilt
