@@ -33,6 +33,7 @@ jobs:
       - name: rename Program Files
         shell: cmd
         run: |
+          dir /s installation &&^
           cd "installation\SourceDir\MySQL" &&^
           rename "MySQL Workbench 8.0 CE" "MySQL_Workbench_8_0_CE"
 
