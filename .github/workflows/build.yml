@@ -54,6 +54,6 @@ jobs:
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "installation/SourceDir/MySQL/PFiles64/MySQL_Workbench_8_0_CE/${{ env.targetZip }}"
+          artifacts: "installation/SourceDir/PFiles64/MySQL/MySQL_Workbench_8_0_CE/${{ env.targetZip }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
