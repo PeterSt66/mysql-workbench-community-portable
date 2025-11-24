@@ -51,9 +51,9 @@ jobs:
           directory: "installation/SourceDir/PFiles64/MySQL/MySQL_Workbench_8_0_CE"
           filename: "${{ env.targetZip }}"
           
-      # - name: Release prebuilt
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     artifacts: "installation/SourceDir/MySQL/PFiles64/MySQL_Workbench_8_0_CE/${{ env.targetZip }}"
-      #     allowUpdates: true
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release prebuilt
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "installation/SourceDir/MySQL/PFiles64/MySQL_Workbench_8_0_CE/${{ env.targetZip }}"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
