@@ -34,22 +34,22 @@ jobs:
         shell: cmd
         run: |
           dir /s installation &&^
-          cd "installation\SourceDir\MySQL" &&^
+          cd "installation\SourceDir\MySQL\PFiles64" &&^
           rename "MySQL Workbench 8.0 CE" "MySQL_Workbench_8_0_CE"
 
       - shell: cmd
-        run: xcopy /H /Y /C "MySQLWorkbench.exe.Portable.cmd" "installation\SourceDir\MySQL\MySQL_Workbench_8_0_CE"
+        run: xcopy /H /Y /C "MySQLWorkbench.exe.Portable.cmd" "installation\SourceDir\MySQL\PFiles64\MySQL_Workbench_8_0_CE"
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "installation/SourceDir/MySQL/MySQL_Workbench_8_0_CE"
+          directory: "installation/SourceDir/MySQL/PFiles64/MySQL_Workbench_8_0_CE"
           filename: "${{ env.targetZip }}"
           
-      - name: Release prebuilt
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "installation/SourceDir/MySQL/MySQL_Workbench_8_0_CE/${{ env.targetZip }}"
-          allowUpdates: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Release prebuilt
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "installation/SourceDir/MySQL/PFiles64/MySQL_Workbench_8_0_CE/${{ env.targetZip }}"
+      #     allowUpdates: true
+      #     token: ${{ secrets.GITHUB_TOKEN }}
